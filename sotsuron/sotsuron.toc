@@ -20,8 +20,9 @@
 \contentsline {subsection}{\numberline {4.2.1}リング半径・チェレンコフ角の絶対値のズレ}{11}%
 \contentsline {subsection}{\numberline {4.2.2}リング半径・チェレンコフ角の電圧依存性}{12}%
 \contentsline {section}{\numberline {4.3}角度分解能}{12}%
-\contentsline {section}{\numberline {4.4}理論値との比較}{13}%
-\contentsline {section}{\numberline {4.5}角度分解能の内訳}{13}%
-\contentsline {section}{\numberline {4.6}収差などによる角度分解能}{13}%
-\contentsline {section}{\numberline {4.7}暗電流の角度分解能への寄与}{13}%
-\contentsline {chapter}{\numberline {第5章}まとめ}{14}%
+\contentsline {subsection}{\numberline {4.3.1}1 p.e.あたりの分解能}{13}%
+\contentsline {section}{\numberline {4.4}理論値との比較}{14}%
+\contentsline {section}{\numberline {4.5}角度分解能の内訳}{14}%
+\contentsline {section}{\numberline {4.6}収差などによる角度分解能}{14}%
+\contentsline {section}{\numberline {4.7}暗電流の角度分解能への寄与}{14}%
+\contentsline {chapter}{\numberline {第5章}まとめ}{15}%

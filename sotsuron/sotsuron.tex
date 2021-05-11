@@ -340,15 +340,36 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
       \end{center}
     \end{figure}
     分解能もVov $\SI{5}{V}$あたりでサチュレーションしていることがわかる。
+    \subsection{1 p.e.あたりの分解能}
+    1 p.e.あたりの分解能を求めるため、イベントごとのhit数で場合わけをし分解能を求めた。
+    図\ref{fig:per_hit}のグラフを1 p.e.あたりの分解能を$\Delta \theta_{1 p.e.}$として、$\frac{\Delta \theta_{1 p.e.}}{\sqrt{nhits}}$でフィットした。
+    フィッティングの値より、1 p.e.あたりの分解能$\Delta \theta_{1 p.e.} = 4.85 \pm 0.01 \: \si{mrad}$と求められた。
+    \begin{figure}[h]
+      \begin{center} 
+        \includegraphics[scale=0.4, clip]{image/per_hit.pdf}
+        \caption{hit数ごとの分解能} 
+        \label{fig:per_hit} 
+      \end{center}
+    \end{figure}
+    
+    
+    \section{理論値との比較}
+    
+    \section{角度分解能の内訳}
+    
+    \section{収差などによる角度分解能}
+    
+    \section{暗電流の角度分解能への寄与}
+    暗電流の角度分解能への影響を調べるために、TDCのcut幅を100 chまで20 chずつ広げていき暗電流の割合を増加させた時の分解能を調べた。
+    図\ref{fig:reso_tdc}に外挿して、cut幅0で暗電流なしの極限を見ると$\sim 1.38 \si{mrad}$の分解能を得られる。
+    \begin{figure}[h]
+      \begin{center} 
+        \includegraphics[scale=0.4, clip]{image/reso_tdc.pdf}
+        \caption{TDCのcut幅を広げていった時の分解能} 
+        \label{fig:reso_tdc} 
+      \end{center}
+    \end{figure}
 
-
-  \section{理論値との比較}
-
-  \section{角度分解能の内訳}
-
-  \section{収差などによる角度分解能}
-
-  \section{暗電流の角度分解能への寄与}
 
 \chapter{まとめ}
 \end{document}  
