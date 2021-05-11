@@ -235,43 +235,112 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     \end{equation}
     この式をもとにシミュレーションを行うと、サチュレーションしているところではもっともらしいということが分かった。
     \begin{figure}[h]
-      \begin{center} 
-        \includegraphics[scale=0.5, clip]{image/hit_simulation.pdf}
-        \caption{信号のhit数とsimulationのhit数} 
-        \label{fig:hit} 
-      \end{center}
+      \begin{tabular}{cc}
+        %---- 最初の図 ---------------------------
+        \begin{minipage}[t]{0.45\hsize}
+          \centering
+          \includegraphics[scale=0.4, clip]{image/hit_count.pdf}
+          \caption{信号と暗電流のhit数} 
+          \label{fig:hit_dark} 
+        \end{minipage} &
+        %---- 2番目の図 --------------------------
+        \begin{minipage}[t]{0.45\hsize}
+          \centering
+          \includegraphics[scale=0.35, clip]{image/hit_simulation.pdf}
+          \caption{信号とsimulationのhit数} 
+          \label{fig:hit_simulation} 
+        \end{minipage}
+        %---- 図はここまで ----------------------
+      \end{tabular}
     \end{figure}
-    \includegraphics[width=10cm, pagebox=cropbox, clip]{image/hit_count.pdf}
+    
+    % \end{figure}
 
   \section{リング半径・チェレンコフ角}
-    各電圧でのチェレンコフ角とリング半径は以下のようになった。
-    \includegraphics[width=10cm, pagebox=cropbox, clip]{image/theta_allV.pdf}
-    \includegraphics[width=10cm, pagebox=cropbox, clip]{image/all_radius.pdf}
-    グラフより、分解能もVov 5Vでサチュレーションしていることがわかる。
-    まず、得られたチェレンコフ角・リング半径の絶対値について考える。
-    ただし、チェレンコフ角とリング半径は()の式より1対1対応なので、ここではリング半径について考える。
-    MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=330 mm$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかけ、計算すると$r=7.7 mm$となった。この値は、解析で得られた値より10\%ほど大きい。今回の実験ではMPPCの配置が球面鏡の焦点面から42 mmほどズレていたので、それが原因ではないかと考えた。
-    図()のように、MPPCが焦点面からズレていた場合焦点面で収束されるはずの光が内側と外側に広がってしまう。上流側の光が多いほど内側にくる光が多くなり、平均をとるとリング半径は小さくなってしまう。今回のセットアップによるズレを考慮して計算を行うと次のようになった。
-    \begin{table}[htb]
-        \begin{center}
-            \caption{リング半径の広がり (mm)}
-            \begin{tabular}{|c|c|c|}\hline
-                min & avg & xax\\ \hline
-                4.54 & 6.62 & 8.69\\ \hline
-            \end{tabular}
-        \end{center}
+    各電圧でのチェレンコフ角とリング半径は図$\ref{fig:all_theta}, \ref{fig:all_radius}$のようになった。
+    \begin{figure}[h]
+      \begin{tabular}{cc}
+        %---- 最初の図 ---------------------------
+        \begin{minipage}[t]{0.45\hsize}
+          \centering
+          \includegraphics[scale=0.4, clip]{image/theta_allV.pdf}
+          \caption{各電圧でのチェレンコフ角} 
+          \label{fig:all_theta} 
+        \end{minipage} &
+        %---- 2番目の図 --------------------------
+        \begin{minipage}[t]{0.45\hsize}
+          \centering
+          \includegraphics[scale=0.3, clip]{image/all_radius.pdf}
+          \caption{各電圧でのリング半径} 
+          \label{fig:all_radius} 
+        \end{minipage}
+        %---- 図はここまで ----------------------
+      \end{tabular}
+    \end{figure}
+
+
+    \begin{table}[b]
+      \begin{center}
+        \label{tab:radius}
+        \caption{リング半径の広がり (mm)}
+        \begin{tabular}{|c|c|c|}\hline
+          min & avg & xax\\ \hline
+          4.54 & 6.62 & 8.69\\ \hline
+        \end{tabular}
+      \end{center}
     \end{table}
-    この平均値が解析で得られる値と考えると、先ほどとは逆に解析値の方が5\%ほど大きくなっている。この原因を考えるために、簡単なシミュレーションをおこなった。
-    \includegraphics[width=10cm, pagebox=cropbox, clip]{image/optical_system.png}
-    \subsection{シミュレーション}
-    リング中心は(3.3, 3.9)、リング半径は$4.54~8.69 mm$の範囲でランダムに決定。
+    グラフより、分解能もVov 5Vでサチュレーションしていることがわかる。
+    \subsection{リング半径・チェレンコフ角の絶対値のズレ}
+      まず、得られたチェレンコフ角・リング半径の絶対値について考える。
+      ただし、チェレンコフ角とリング半径は()の式より1対1対応なので、ここではリング半径について考える。
+      MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=330 mm$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかけ、計算すると$r=7.7 mm$となった。この値は、解析で得られた値より10\%ほど大きい。今回の実験ではMPPCの配置が球面鏡の焦点面から42 mmほどズレていたので、それが原因ではないかと考えた。
+      図()のように、MPPCが焦点面からズレていた場合焦点面で収束されるはずの光が内側と外側に広がってしまう。上流側の光が多いほど内側にくる光が多くなる。今回のセットアップによるズレを考慮して計算を行うと表$\ref{tab:radius}$のようになった。
+      この平均値が解析で得られる値と考えると、先ほどとは逆に解析値の方が5\%ほど大きくなっている。
+      \begin{figure}[h]
+        \begin{center} 
+          \includegraphics[scale=1, clip]{image/optical_system.png}
+          \caption{光学系} 
+          \label{fig:optical_system} 
+        \end{center}
+      \end{figure}
+      これは絶対値のズレは暗電流が影響していると考えられる。
+      \begin{figure}[h]
+        \begin{center} 
+          \includegraphics[scale=0.4, clip]{image/dark_current_image.pdf}
+          \caption{黄：実際に光子が当たったセグメント、青：暗電流によるhitがあったセグメント} 
+          \label{fig:darkcurrent_image} 
+        \end{center}
+      \end{figure}
+      図$\ref{fig:darkcurrent_image}$のように、暗電流がリングの外側に出てしまった場合そのイベントのリング半径は実際よりも大きくなってしまう。
+      リングの内側に暗電流が発生した場合はリング半径は小さくなるが、今回のリングとMPPCアレイのサイズ関係だと内側よりも外側の方が面積が大きいため、暗電流によってリング半径が大きく見積もられてしまう。
+    \subsection{リング半径・チェレンコフ角の電圧依存性}
+    リング半径とチェレンコフ角の電圧依存性を考えるために、簡単なシミュレーションをおこなった。
+    リング中心は(3.3, 3.9)、リング半径は$4.54\sim\SI{8.69}{mm}$の範囲でランダムに決定。
     1イベントごとの発生光子数は68個、MPPCの検出確率は各電圧での値を用いた。
     また、1セグメントに複数の光子が同時に入る効果やセグメント間の隙間も考慮した。
     以上の条件で、実際の解析と同様の手順でリング半径を求めた。
-    \includegraphics[width=10cm, pagebox=cropbox, clip]{image/radius_simulation.pdf}
-    
+    \begin{figure}[h]
+      \begin{center} 
+        \includegraphics[scale=0.4, clip]{image/radius_simulation.pdf}
+        \caption{シミュレーションによるリング半径} 
+        \label{fig:radius_simulation} 
+      \end{center}
+    \end{figure}
+    図$\ref{figure:radius_simulation}$を見ると、シミュレーションでもリング半径に電圧依存性が見られることがわかる。
+    これは、暗電流と重複hitの効果が原因と考えられる。
+    先ほども書いたように、暗電流にはリング半径を大きくする効果があり、電圧を上げていくと暗電流が増加していくので、リング半径・チェレンコフ角が増加していく。
 
   \section{角度分解能}
+    各電圧での角度分解能をまとめると図$\ref{fig:resolution_all}$のようになった。
+    \begin{figure}[h]
+      \begin{center} 
+        \includegraphics[scale=0.4, clip]{image/resolutin_allV.pdf}
+        \caption{各電圧での角度分解能} 
+        \label{fig:resolution_all} 
+      \end{center}
+    \end{figure}
+    分解能もVov $\SI{5}{V}$あたりでサチュレーションしていることがわかる。
+
 
   \section{理論値との比較}
 

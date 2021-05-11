@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  11 MAY 2021 17:12
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  11 MAY 2021 21:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,49 +403,83 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8] [9]
 第4章
-File: image/hit_simulation.pdf Graphic file (type pdf)
-<image/hit_simulation.pdf>
 File: image/hit_count.pdf Graphic file (type pdf)
 <image/hit_count.pdf>
 
-Underfull \hbox (badness 4036) in paragraph at lines 235--239
-\JY2/mc/m/n/10 らしいということが分か った 。 []
+Overfull \hbox (22.78856pt too wide) in paragraph at lines 242--243
+ [][] 
  []
 
+File: image/hit_simulation.pdf Graphic file (type pdf)
+<image/hit_simulation.pdf>
+File: image/theta_allV.pdf Graphic file (type pdf)
+<image/theta_allV.pdf>
+
+Overfull \hbox (22.78856pt too wide) in paragraph at lines 266--267
+ [][] 
+ []
+
+File: image/all_radius.pdf Graphic file (type pdf)
+<image/all_radius.pdf>
 [10
 
 ]
-File: image/theta_allV.pdf Graphic file (type pdf)
-<image/theta_allV.pdf>
-File: image/all_radius.pdf Graphic file (type pdf)
-<image/all_radius.pdf>
 File: image/optical_system.png Graphic file (type bmp)
 <image/optical_system.png>
+File: image/dark_current_image.pdf Graphic file (type pdf)
+<image/dark_current_image.pdf>
 
-Overfull \hbox (94.854pt too wide) in paragraph at lines 241--260
-[]\JY2/mc/m/n/10 各電圧でのチ ェレンコフ角とリング半径は以
-下のようにな った 。 []
- []
 
-[11] [12]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 318.
 File: image/radius_simulation.pdf Graphic file (type pdf)
 <image/radius_simulation.pdf>
- [13] [14]
+LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <10> not available
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 329.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 329.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 329.
+LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <10> not available
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 329.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 329.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 329.
+
+LaTeX Warning: Reference `figure:radius_simulation' on page 11 undefined on inp
+ut line 329.
+
+[11]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: image/resolutin_allV.pdf Graphic file (type pdf)
+<image/resolutin_allV.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13]
 第5章
-[15
+[14
 
 ] (./sotsuron.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5646 strings out of 481134
- 118932 string characters out of 5917333
- 355347 words of memory out of 5000000
- 21611 multiletter control sequences out of 15000+600000
- 552945 words of font info for 126 fonts, out of 8000000 for 9000
+ 5676 strings out of 481134
+ 119476 string characters out of 5917333
+ 356431 words of memory out of 5000000
+ 21636 multiletter control sequences out of 15000+600000
+ 554555 words of font info for 134 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  36i,12n,46p,892b,907s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron.dvi (17 pages, 35816 bytes).
+Output written on sotsuron.dvi (16 pages, 38216 bytes).
