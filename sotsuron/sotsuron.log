@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  12 MAY 2021 18:16
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  12 MAY 2021 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,27 +456,11 @@ File: image/all_radius.pdf Graphic file (type pdf)
 [12
 
 ]
-LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <10> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 344.
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 344.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 344.
-LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <10> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 344.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 344.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 344.
-
-
-LaTeX Warning: Reference `theta_radius' on page 13 undefined on input line 344.
-
-
 File: image/optical_system.png Graphic file (type bmp)
 <image/optical_system.png>
 File: image/dark_current_image.pdf Graphic file (type pdf)
 <image/dark_current_image.pdf>
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -485,6 +469,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: image/radius_simulation.pdf Graphic file (type pdf)
 <image/radius_simulation.pdf>
+LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <10> not available
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 378.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 378.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 378.
+LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <10> not available
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 378.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 378.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 378.
 
 LaTeX Warning: Reference `figure:radius_simulation' on page 13 undefined on inp
 ut line 378.
@@ -519,17 +515,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  5709 strings out of 481134
  120138 string characters out of 5917333
- 356518 words of memory out of 5000000
+ 356529 words of memory out of 5000000
  21663 multiletter control sequences out of 15000+600000
  554555 words of font info for 134 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  36i,13n,46p,892b,907s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron.dvi (20 pages, 44368 bytes).
+Output written on sotsuron.dvi (20 pages, 43780 bytes).
