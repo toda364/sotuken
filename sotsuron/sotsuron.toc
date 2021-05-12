@@ -10,19 +10,18 @@
 \contentsline {section}{\numberline {3.2}hit数}{6}%
 \contentsline {section}{\numberline {3.3}hit patternの確認}{7}%
 \contentsline {section}{\numberline {3.4}リングイメージの中心}{8}%
-\contentsline {subsection}{\numberline {3.4.1}決定方法1}{8}%
-\contentsline {subsection}{\numberline {3.4.2}決定方法2}{8}%
-\contentsline {section}{\numberline {3.5}リング半径・チェレンコフ角}{8}%
-\contentsline {section}{\numberline {3.6}角度分解能}{9}%
-\contentsline {chapter}{\numberline {第4章}結果}{10}%
-\contentsline {section}{\numberline {4.1}hit数}{10}%
-\contentsline {section}{\numberline {4.2}リング半径・チェレンコフ角}{11}%
-\contentsline {subsection}{\numberline {4.2.1}リング半径・チェレンコフ角の絶対値のズレ}{11}%
-\contentsline {subsection}{\numberline {4.2.2}リング半径・チェレンコフ角の電圧依存性}{12}%
-\contentsline {section}{\numberline {4.3}角度分解能}{12}%
-\contentsline {subsection}{\numberline {4.3.1}1 p.e.あたりの分解能}{13}%
-\contentsline {section}{\numberline {4.4}理論値との比較}{14}%
-\contentsline {section}{\numberline {4.5}角度分解能の内訳}{14}%
-\contentsline {section}{\numberline {4.6}収差などによる角度分解能}{14}%
-\contentsline {section}{\numberline {4.7}暗電流の角度分解能への寄与}{14}%
-\contentsline {chapter}{\numberline {第5章}まとめ}{15}%
+\contentsline {subsection}{\numberline {3.4.1}決定方法1}{9}%
+\contentsline {subsection}{\numberline {3.4.2}決定方法2}{9}%
+\contentsline {section}{\numberline {3.5}リング半径}{10}%
+\contentsline {section}{\numberline {3.6}チェレンコフ角・角度分解能}{11}%
+\contentsline {chapter}{\numberline {第4章}結果}{12}%
+\contentsline {section}{\numberline {4.1}hit数}{12}%
+\contentsline {section}{\numberline {4.2}リング半径・チェレンコフ角}{13}%
+\contentsline {subsection}{\numberline {4.2.1}リング半径・チェレンコフ角の絶対値のズレ}{13}%
+\contentsline {subsection}{\numberline {4.2.2}リング半径・チェレンコフ角の電圧依存性}{14}%
+\contentsline {section}{\numberline {4.3}角度分解能}{14}%
+\contentsline {subsection}{\numberline {4.3.1}1 p.e.あたりの分解能}{15}%
+\contentsline {subsection}{\numberline {4.3.2}角度分解能の内訳}{16}%
+\contentsline {subsection}{\numberline {4.3.3}収差などによる角度分解能}{16}%
+\contentsline {subsection}{\numberline {4.3.4}暗電流の角度分解能への寄与}{16}%
+\contentsline {chapter}{\numberline {第5章}まとめ}{18}%
