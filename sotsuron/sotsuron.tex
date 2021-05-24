@@ -53,6 +53,7 @@ v > \frac{c}{n} \Leftrightarrow \beta > \frac{1}{n}
 発生するチェレンコフ光と荷電粒子の進行方向がなす角をチェレンコフ角$\theta_c$と呼び、チェレンコフ角と荷電粒子の速度、物質の屈折率の関係は次式で表される。
 \begin{equation}
 \cos \theta_c = \frac{1}{n\beta}
+\label{cherenkov}
 \end{equation}
 \begin{figure}[h]
   \begin{center} 
@@ -283,8 +284,9 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \label{hit_count}
     \end{equation}
     また、今回は1つのセグメントに同時に複数個の光子が入ってきても1hitと数えるので、その場合いくつかの光子を数え落としてしまう。
-    式\ref{hit_count}より検出光子数を計算し、シミュレーションによって消えてしまう光子数の見積もりも行った。
+    式(\ref{hit_count})より検出光子数を計算し、シミュレーションによって消えてしまう光子数の見積もりも行った。
     その結果、図\ref{fig:hit_simulation}のように、サチュレーションしているところでは解析値と一致していることがわかった。
+    このことから、MPPCの使用は$V_{ov} \ge \SI{5}{V}$が良さそうであることが分かった。
     \begin{figure}[h]
       \begin{tabular}{cc}
         %---- 最初の図 ---------------------------
@@ -335,7 +337,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \label{tab:radius}
         \caption{リング半径の広がり (mm)}
         \begin{tabular}{|c|c|c|}\hline
-          min & avg & xax\\ \hline
+          min & avg & max\\ \hline
           4.54 & 6.62 & 8.69\\ \hline
         \end{tabular}
       \end{center}
@@ -343,8 +345,22 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     \subsection{リング半径・チェレンコフ角の絶対値のズレ}
       まず、得られたチェレンコフ角・リング半径の絶対値について考える。
       ただし、チェレンコフ角とリング半径は式\ref{theta_radius}より1対1対応なので、ここではリング半径について考える。
-      MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=330 mm$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかけ、計算すると$r=7.7 mm$となった。この値は、解析で得られた値より10\%ほど大きい。今回の実験ではMPPCの配置が球面鏡の焦点面から42 mmほどズレていたので、それが原因ではないかと考えた。
-      図\ref{fig:optical_system}のように、MPPCが焦点面からズレていた場合焦点面で収束されるはずの光が内側と外側に広がってしまう。上流側の光が多いほど内側にくる光が多くなる。今回のセットアップによるズレを考慮して計算を行うと表$\ref{tab:radius}$のようになった。
+      MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=330 mm$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかける。
+      今回は$\SI{0.95}{GeV/c}$の電子(陽電子)を用いたので、速度$\beta$は、相対論の式より
+      \begin{eqnarray}
+        p &=& \frac{mv}{\sqrt{1-{\beta}^2}} \nonumber \\
+        pc &=& \frac{mc^2\cdot \beta}{\sqrt{1-{\beta}^2}} \nonumber 
+      \end{eqnarray}
+      よって、
+      \begin{eqnarray}
+        \beta &=& \sqrt{\frac{{pc}^2}{\left(mc^2\right)^2 + {pc}^2}} \nonumber \\
+        &=& \sqrt{\frac{\left(0.95\times 10^9\right)^2}{\left(0.51\times 10^6\right)^2 + \left(0.95\times 10^9\right)^2}} = 0.999 \nonumber
+      \end{eqnarray}
+      この時、チェレンコフ角$\theta$は空気の屈折率$n=1.000273$とすると、式(\ref{cherenkov})より
+      $r=\SI{7.7}{mm}$となった。この値は解析で得られた値より10\%ほど大きい。今回の実験ではMPPCの配置が球面鏡の焦点面から$\SI{42}{mm}$ほどズレていたので、それが原因ではないかと考えた。
+      このズレによる影響を、簡単のために平面鏡の場合で考えた。
+      図\ref{fig:optical_system}のように、MPPCが焦点面からズレていた場合焦点面で収束されるはずの光が内側と外側に広がってしまい、
+      上流側の光が多いほど内側にくる光が多くなる。今回のセットアップによるズレを考慮して計算を行うと表$\ref{tab:radius}$のようになった。
       この平均値が解析で得られる値と考えると、先ほどとは逆に解析値の方が5\%ほど大きくなっている。
       \begin{figure}[h]
         \begin{center} 
@@ -353,7 +369,6 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
           \label{fig:optical_system} 
         \end{center}
       \end{figure}
-      これは絶対値のズレは暗電流が影響していると考えられる。
       \begin{figure}[h]
         \begin{center} 
           \includegraphics[scale=0.4, clip]{image/dark_current_image.pdf}
@@ -361,8 +376,18 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
           \label{fig:darkcurrent_image} 
         \end{center}
       \end{figure}
-      図$\ref{fig:darkcurrent_image}$のように、暗電流がリングの外側に出てしまった場合そのイベントのリング半径は実際よりも大きくなってしまう。
+      逆に解析値の方が大きくなってしまう原因として考えられるのが、暗電流の効果である。
+      例えば図$\ref{fig:darkcurrent_image}$のように、暗電流がリングの外側に出てしまった場合そのイベントのリング半径は実際よりも大きくなってしまう。
       リングの内側に暗電流が発生した場合はリング半径は小さくなるが、今回のリングとMPPCアレイのサイズ関係だと内側よりも外側の方が面積が大きいため、暗電流によってリング半径が大きく見積もられてしまう。
+      図\ref{fig:darkcurrent_radius}は実際に暗電流のイベントのみの場合にリング半径を計算したものである。
+      理論値よりも大きい値が得られることが分かる。
+      \begin{figure}[h]
+        \begin{center} 
+          \includegraphics[scale=0.4, clip]{image/background_radius.pdf}
+          \caption{暗電流のみでの各電圧のリング半径}
+          \label{fig:darkcurrent_radius} 
+        \end{center}
+      \end{figure}
     \subsection{リング半径・チェレンコフ角の電圧依存性}
     リング半径とチェレンコフ角の電圧依存性を考えるために、簡単なシミュレーションをおこなった。
     リング中心は(3.3, 3.9)、リング半径は$4.54\sim\SI{8.69}{mm}$の範囲でランダムに決定。
@@ -376,10 +401,10 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \label{fig:radius_simulation} 
       \end{center}
     \end{figure}
-    図$\ref{figure:radius_simulation}$を見ると、シミュレーションでもリング半径に電圧依存性が見られることがわかる。
+    図$\ref{fig:radius_simulation}$を見ると、シミュレーションでもリング半径に電圧依存性が見られることがわかる。
     これは暗電流の効果が原因と考えられる。
-    暗電流にはリング半径を大きくする効果があり、電圧を上げていくと暗電流が増加していくので、リング半径・チェレンコフ角が増加していく。
-
+    図\ref{fig:darkcurrent_radius}から分かるように暗電流にはリング半径を大きくする効果があり、電圧を上げていくと暗電流が増加していくので、その効果が大きくなり、
+    リング半径・チェレンコフ角に電圧依存性が生じてしまう。
   \section{角度分解能}
     各電圧での角度分解能をまとめると図$\ref{fig:resolution_all}$のようになった。
     \begin{figure}[h]
