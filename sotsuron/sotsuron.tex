@@ -157,36 +157,36 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
   　TDCを取得するための閾値は動作電圧が最も低い$V_{ov}=3.0V$の時の1p.e.にかけた。取得したTDCのヒストグラムが図\ref{fig:tdc}である。
   \begin{figure}[htbp]
     \begin{center} 
-      \includegraphics[clip, scale=0.3]{image/tdc.png}
+      \includegraphics[clip, scale=0.2]{image/tdc.png}
       \caption{得られたTDCのヒストグラム。全てのチャンネルを足し合わせている。}
       \label{fig:tdc} 
     \end{center}
   \end{figure}
-  図\ref{fig:tdc}より、今回のTDCcut幅は20と決定した。また、幅は20に固定し、cut positionは$\frac{signal}{bg}$比が最も良くなるところをscanによって決定した。
-  \begin{figure}[htbp]
+  図\ref{fig:tdc}より、今回のTDC cut幅は\SI{20}{ch}と決定した。また、cut positionはcut幅を$20\:\si{ch}$に固定した状態で$\frac{signal}{bg}$比が最も良くなるところをscanによって決定した。
+  \begin{figure}[bp]
     \begin{center} 
       \includegraphics[clip, scale=0.3]{image/TDCcut_scan.pdf}
-      \caption{Vov 5\si{V}でのscanの様子。横軸はcutのスタート位置でcut幅は20で固定している。}
+      \caption{$V_{ov}$ 5\si{V}でのscanの様子。横軸はcutのスタート位置でcut幅は20で固定している。\\ $287\sim 307\;\si{ch}$でsignal/bg比が最もよくなっていることが分かる。}
       \label{fig:tdc_scan} 
     \end{center}
   \end{figure}
-  図\ref{fig:tdc_scan}より、今回のTDCcut positionは$287\sim307 \si{ch}$に決定した。
+  図\ref{fig:tdc_scan}より、今回のTDC cut positionは$287 \sim 307 \:\si{ch}$に決定した。
 
   \section{hit数}
-    先ほど決定したTDCcutを用いて、1イベント当たりに光子が入ってきたセグメントの数を数え、それをhit数とした。
-    ただし、今回はTDCでhitの有無のみをみているため、1セグメントに光子が複数個入っても1hitとして数える。
+    先ほど決定したTDC cutを用いて、1イベント当たりに光子が入ってきたセグメントの数を数え、それをhit数とした。
+    ただし、今回はTDCでhitの有無のみを見ているため、1セグメントに光子が複数個入っても1hitとして数えた。
     \begin{figure}[h]
       \begin{center} 
-        \includegraphics[scale=0.5, clip]{image/hit_image.pdf}
+        \includegraphics[scale=0.4, clip]{image/hit_image.pdf}
         \caption{あるイベントで黄色のセグメントに光子が入ってきた場合の図。この場合だと10hitとなる。} 
         \label{fig:hit_image} 
       \end{center}
     \end{figure}
     
     全イベントでhit数を出し、そのヒストグラムをガウスフィットすることでピークから各電圧での平均のhit数を決定した。
-    また、TDCのcut範囲をピーク位置($287\sim307\si{ch}$)からずらした$400\sim420\si{ch}$にしたときのhit数を暗電流によるhit数とした。
+    また、TDCのcut範囲をピーク位置($287\sim307\:\si{ch}$)からずらした$400\sim420\:\si{ch}$にしたときのhit数を暗電流によるhit数とした。
     
-    \begin{figure}[h]
+    \begin{figure}[b]
       \begin{center} 
         \includegraphics[scale=0.5, clip]{image/Vov5_nhits.pdf}
         \caption{Vov$\SI{5}{V}$のnhits} 
@@ -208,21 +208,21 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     hit patternを見るとわかるように、今回の実験ではアレイの中心とリングの中心がズレていることがわかった。
     そこで、リング中心の決定を最初におこなった。
     \subsection{決定方法1}
-      まずアレイを1列ずつ取り出し、円周上に来るところで2つのピークが見えるのでそのピーク間の距離を求めた。
-      円の方程式より、図\ref{fig:find_center_image}の$x_1. x_2, y_0$には次のような関係が成り立つ。
+      アレイを1列ずつ取り出しセグメントごとのhit数を見ると、円周上に来るセグメントのところで2つのピークが見える。
+      また、円の方程式より、図\ref{fig:find_center_image}の$x_1. x_2, y_0$には式\ref{circle_equation}ような関係が成り立つので、
+      ピーク間距離を求め、式\ref{circle_equation}でフィッティングすることで円の中心を求めた。(図\ref{fig:find_center_image})
       \begin{equation}
         x_2 - x_1 = 2\sqrt{{p_0}^2-{\left(y_0-p_1\right)}^2}
         \label{circle_equation}
       \end{equation}
-      求められたピーク間の距離を式\ref{circle_equation}でフィッティングすることで円の中心を求めた。
-      \begin{figure}[h]
-        \begin{center} 
+      \begin{figure}[hbtp]
+        \begin{center}
           \includegraphics[scale=1, clip]{image/find_center1.pdf}
           \caption{yを固定した時の図。$x_1, x_2$の2点のピークが見えるので、ピークの間隔から$x_2-x_1$を求める。} 
           \label{fig:find_center_image} 
         \end{center}
       \end{figure}
-      \begin{figure}[h]
+      \begin{figure}[hbtp]
         \begin{tabular}{cc}
           %---- 最初の図 ---------------------------
           \begin{minipage}[t]{0.45\hsize}
@@ -244,9 +244,9 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
       この方法では、リングの中心はアレイのマス目を単位として$\left(3.3, 4.1\right)$と決定された。
     \subsection{決定方法2}
       ここにはリング中心の求め方の二つ目を書く
-
-  \section{リング半径}
-    イベントごとに、リング中心からhitしたセグメントまでの距離を平均し、それを全イベントで積み上げてヒストグラムを描いた。そのヒストグラムをガウスフィットし、meanをその電圧での平均半径とした。
+    \section{リング半径}
+    イベントごとに、リング中心からhitしたセグメントまでの距離をhit数で平均し、それを全イベントで積み上げてヒストグラムを描いた。(図\ref{fig:5Vradius})\\
+    そのヒストグラムをガウスフィットし、meanをその電圧での平均半径とした。
     \begin{figure}[h]
       \begin{center} 
         \includegraphics[scale=0.5, clip]{image/radius.pdf}
@@ -263,14 +263,15 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \theta_{c} = \arctan \left(\frac{r}{f} \right)
         \label{theta_radius}
       \end{equation}
-      この式より、イベントごとのチェレンコフ角$\theta_{c}$を計算し、全イベント分を積み上げたヒストグラムをガウスフィットし、meanをその電圧でのチェレンコフ角とした。
+      この式より、イベントごとのリング半径からイベントごとのチェレンコフ角$\theta_{c}$を計算した。\\
+      全イベント分を積み上げたヒストグラムをガウスフィットすることでmeanとsigmaを求め、meanをその電圧での平均チェレンコフ角、sigmaをその電圧での角度分解能とした。
 
       図(Vov5Vの時のチェレンコフ角)\\
-      チェレンコフ角のヒストグラムをガウスフィットし、meanをその電圧でのチェレンコフ角$\theta_{c}$、分散を角度分解能とした。
 
 \chapter{結果}
   \section{hit数}
-    全電圧でのhit数をまとめると、図\ref{fig:hit_dark}の様にVov5Vでサチュレーションしていることがわかる。そこで、このサチュレーションしているhit数がもっともらしいことを計算により確かめる。
+    全電圧でのhit数をまとめると、図\ref{fig:hit_dark}の様にVov5Vでサチュレーションしていることがわかる。
+    そこで、このサチュレーションしているhit数がもっともらしいことを計算により確かめた。
     チェレンコフ光の発生光子数$N_{0}$は、次の式で求めることができる。
     \begin{equation}
         N_{0} = 2 \pi \alpha L  \left(1 - \frac{1}{(n\beta)^2}\right) \left(\frac{1}{\lambda_{1}} - \frac{1}{\lambda_{2}}\right)
@@ -281,8 +282,8 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         N_{det} = \int^{\lambda_2}_{\lambda_1} N_{0}\left(\lambda\right) \epsilon_{mirror}\left(\lambda\right) \epsilon_{MPPC}\left(\lambda\right) d\lambda
         \label{hit_count}
     \end{equation}
-    また、今回は1つのセグメントに同時に複数個の光子が入ってきても1hitと数えることにより数え落としてしまうことがある。
-    式\ref{hit_count}より検出光子数を計算し、シミュレーションによって消えてしまう光子数を見積もった。
+    また、今回は1つのセグメントに同時に複数個の光子が入ってきても1hitと数えるので、その場合いくつかの光子を数え落としてしまう。
+    式\ref{hit_count}より検出光子数を計算し、シミュレーションによって消えてしまう光子数の見積もりも行った。
     その結果、図\ref{fig:hit_simulation}のように、サチュレーションしているところでは解析値と一致していることがわかった。
     \begin{figure}[h]
       \begin{tabular}{cc}
@@ -432,7 +433,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     広い運動量領域に対応できるリングイメージ・チェレンコフ(RICH)検出器を用いる。
     今回は、球面鏡を使用したテスト機によってMPPCの暗電流の影響や電圧依存性、収差の角度分解能への影響を調査した。
     まず暗電流の寄与は、TDC cutで十分抑制可能ではあるが、1 p.e.あたりの分解能への影響が$\sim1.47\si{mrad}$ほどあり、
-    セグメントサイズが13%ほど大きく見えてしまう効果となることがわかったので、実機では暗電流の効果も含めてセグメントサイズを決定する必要がある。
+    セグメントサイズが13\%ほど大きく見えてしまう効果となることがわかったので、実機では暗電流の効果も含めてセグメントサイズを決定する必要がある。
     MPPCの電圧依存性については、hit数や分解能のサチュレーションしている値からVov 5Vあたりでの使用が良いとわかった。
     また、暗電流の効果によって、リング半径やチェレンコフ角に電圧依存性が生じるため、実機を使用する際はデータによるチェレンコフ角の較正が必要となることが分かった。
 \end{document} 
