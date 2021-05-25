@@ -1,43 +1,46 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.euc) (TeX Live 2020) (preloaded format=platex 2021.3.19)  24 MAY 2021 12:54
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  25 MAY 2021 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"/Users/tokudamegumu/OneDrive - Osaka University/work/latex/toda/sotsuron/sotsuron"
-(/Users/tokudamegumu/OneDrive - Osaka University/work/latex/toda/sotsuron/sotsuron.tex
-pLaTeX2e <2020-02-02>+3 (based on LaTeX2e <2020-02-02> patch level 5)
-L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/platex/jsclasses/jsreport.cls
+**sotsuron
+(./sotsuron.tex
+pLaTeX2e <2020-02-02u03>+3 (based on LaTeX2e <2020-02-02> patch level 5)
+L3 programming layer <2020-03-06>
+(/usr/local/texlive/2020/texmf-dist/tex/platex/jsclasses/jsreport.cls
 Document Class: jsreport 2020/02/02 jsclasses (okumura, texjporg)
-
-! Class jsreport Error: You are running pLaTeX.
-(jsreport)              Please use upLaTeX instead, or remove 'uplatex' from
-(jsreport)              the class option list.
-
-See the jsreport class documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.246       {\@ehc}
-                   
-? 
-! Emergency stop.
- ...                                              
-                                                  
-l.246       {\@ehc}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
- 
-Here is how much of TeX's memory you used:
- 152 strings out of 481140
- 2427 string characters out of 5917417
- 242666 words of memory out of 5000000
- 16286 multiletter control sequences out of 15000+600000
- 536209 words of font info for 41 fonts, out of 8000000 for 9000
- 929 hyphenation exceptions out of 8191
- 21i,0n,24p,278b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
-latex/jsclasses/jslogo.sty
+\jsc@mpt=\dimen150
+\jsc@mmm=\dimen151
+\jsc@smallskipamount=\skip47
+LaTeX Info: Redefining \textmc on input line 497.
+LaTeX Info: Redefining \textgt on input line 499.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY2/mc/m/n --> JY2/gt/m/n on input line 561.
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 752.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 752.
+\fullwidth=\dimen152
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 891.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 891.
+\c@part=\count166
+\c@chapter=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\@abstractbox=\box61
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\jsc@tocl@width=\dimen153
+\@lnumwidth=\dimen154
+\bibindent=\dimen155
+(/usr/local/texlive/2020/texmf-dist/tex/platex/jsclasses/jslogo.sty
 Package: jslogo 2019/07/25 okumura, texjporg
 LaTeX Info: Redefining \TeX on input line 94.
 LaTeX Info: Redefining \LaTeX on input line 147.
@@ -429,11 +432,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 第4章
 File: image/hit_count.pdf Graphic file (type pdf)
 <image/hit_count.pdf>
-
-Overfull \hbox (22.78856pt too wide) in paragraph at lines 295--296
- [][] 
- []
-
 File: image/hit_simulation.pdf Graphic file (type pdf)
 <image/hit_simulation.pdf>
 File: image/theta_allV.pdf Graphic file (type pdf)
@@ -486,4 +484,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  36i,13n,46p,892b,912s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron.dvi (20 pages, 47776 bytes).
+Output written on sotsuron.dvi (20 pages, 47772 bytes).
