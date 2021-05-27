@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  25 MAY 2021 18:24
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.3.19)  27 MAY 2021 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,6 +365,10 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
  [3]
 File: image/RICH.png Graphic file (type bmp)
 <image/RICH.png>
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 118.
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 118.
  [4]
 第2章
 File: image/setup.png Graphic file (type bmp)
@@ -379,56 +383,45 @@ File: image/mirror.png Graphic file (type bmp)
 第3章
 File: image/tdc.png Graphic file (type bmp)
 <image/tdc.png>
-LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 166.
-LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 166.
 File: image/TDCcut_scan.pdf Graphic file (type pdf)
 <image/TDCcut_scan.pdf>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 170.
+(Font)              scaled to size 5.5481pt on input line 172.
 File: image/hit_image.pdf Graphic file (type pdf)
 <image/hit_image.pdf>
+[6
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+]
 File: image/Vov5_nhits.pdf Graphic file (type pdf)
 <image/Vov5_nhits.pdf>
 File: image/hitpattern.pdf Graphic file (type pdf)
 <image/hitpattern.pdf>
-[6
-
-]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [7]
 File: image/find_center1.pdf Graphic file (type pdf)
 <image/find_center1.pdf>
 
-Overfull \hbox (267.45589pt too wide) in paragraph at lines 221--222
+Overfull \hbox (267.45589pt too wide) in paragraph at lines 228--229
  [] 
  []
 
 File: image/find_ycenter.pdf Graphic file (type pdf)
 <image/find_ycenter.pdf>
 
-Overfull \hbox (22.78856pt too wide) in paragraph at lines 231--232
+Overfull \hbox (22.78856pt too wide) in paragraph at lines 238--239
  [][] 
  []
 
 File: image/find_xcenter.pdf Graphic file (type pdf)
 <image/find_xcenter.pdf>
 
-Overfull \hbox (22.78856pt too wide) in paragraph at lines 238--239
+Overfull \hbox (22.78856pt too wide) in paragraph at lines 245--246
  [][] 
  []
 
+[8] [9]
 File: image/radius.pdf Graphic file (type pdf)
 <image/radius.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7] [8] [9] [10] [11]
+ [10] [11]
 第4章
 File: image/hit_count.pdf Graphic file (type pdf)
 <image/hit_count.pdf>
@@ -437,7 +430,7 @@ File: image/hit_simulation.pdf Graphic file (type pdf)
 File: image/theta_allV.pdf Graphic file (type pdf)
 <image/theta_allV.pdf>
 
-Overfull \hbox (22.78856pt too wide) in paragraph at lines 319--320
+Overfull \hbox (22.78856pt too wide) in paragraph at lines 333--334
  [][] 
  []
 
@@ -453,35 +446,28 @@ File: image/dark_current_image.pdf Graphic file (type pdf)
 File: image/background_radius.pdf Graphic file (type pdf)
 <image/background_radius.pdf>
  [13]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: image/radius_simulation.pdf Graphic file (type pdf)
 <image/radius_simulation.pdf>
-[14]
+ [14]
 File: image/resolutin_allV.pdf Graphic file (type pdf)
 <image/resolutin_allV.pdf>
- [15]
 File: image/per_hit.pdf Graphic file (type pdf)
 <image/per_hit.pdf>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [15] [16]
 File: image/reso_tdc.pdf Graphic file (type pdf)
 <image/reso_tdc.pdf>
-[16] [17]
+ [17]
 第5章
 [18
 
 ] (./sotsuron.aux) ) 
 Here is how much of TeX's memory you used:
- 5702 strings out of 481134
- 120129 string characters out of 5917333
- 358551 words of memory out of 5000000
- 21658 multiletter control sequences out of 15000+600000
+ 5703 strings out of 481134
+ 120142 string characters out of 5917333
+ 357562 words of memory out of 5000000
+ 21659 multiletter control sequences out of 15000+600000
  553054 words of font info for 127 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  36i,13n,46p,892b,912s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron.dvi (20 pages, 47772 bytes).
+Output written on sotsuron.dvi (20 pages, 50464 bytes).

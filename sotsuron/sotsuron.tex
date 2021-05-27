@@ -113,7 +113,9 @@ v > \frac{c}{n} \Leftrightarrow \beta > \frac{1}{n}
 \end{enumerate}
 このうち、収差などの影響の内訳は詳細にわかっていないため、球面鏡と光センサーとしてMPPCを用いた小型のテスト機を用いて収差の内訳について調査を行なった。
 \subsection{Multi Pixel Photon Counter}
-　今回のテスト実験で用いた光センサーであるMulti Pixel Photon Counter、MPPCは安価である、磁場に強いといった利点がある。一方で熱電子が増幅され、１光電子が常にノイズとして出ており、暗電流が大きいという特徴がある。その計数率は100~300kHzでありRICH検出器では1光電子を捉えるため、その影響についても併せて調査しシミュレーションによる再現を行なった。また電圧によってゲインと検出効率が変わるといった特徴もあり、以降ではMPPCの動作電圧$V_{operation}$から、信号が出始める電圧$V_{breakdown}\sim51V$を引いた$V_{over voltage}$という表記を用いる。
+　今回のテスト実験で用いた光センサーであるMulti Pixel Photon Counter、MPPCは安価である、磁場に強いといった利点がある。
+一方で熱電子が増幅され、１光電子が常にノイズとして出ており、暗電流が大きいという特徴がある。
+その計数率は$100\sim 300\; \si{kHz}$でありRICH検出器では1光電子を捉えるため、その影響についても併せて調査しシミュレーションによる再現を行なった。また電圧によってゲインと検出効率が変わるといった特徴もあり、以降ではMPPCの動作電圧$V_{operation}$から、信号が出始める電圧$V_{breakdown}\sim51V$を引いた$V_{over voltage}$という表記を用いる。
 \chapter{実験のセットアップ}
  　2020年12月にSPring-8のLEPSビームラインにて実験を行なった。0.95 GeV/$c$の電子・陽電子をビームとして用い、空気を輻射体とした。暗箱内にはビーム軸に対してチェレンコフ光が$15^\circ$の角度で反射するように球面鏡を配置し、MPPC上に収束させた。暗箱外側の先端と後部にはトリガーカウンターとして10mm角のプラスチックシンチレーターをそれぞれビーム軸上に配置した。
  
@@ -164,9 +166,9 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     \end{center}
   \end{figure}
   図\ref{fig:tdc}より、今回のTDC cut幅は\SI{20}{ch}と決定した。また、cut positionはcut幅を$20\:\si{ch}$に固定した状態で$\frac{signal}{bg}$比が最も良くなるところをscanによって決定した。
-  \begin{figure}[bp]
+  \begin{figure}[bthp]
     \begin{center} 
-      \includegraphics[clip, scale=0.3]{image/TDCcut_scan.pdf}
+      \includegraphics[clip, scale=0.25]{image/TDCcut_scan.pdf}
       \caption{$V_{ov}$ 5\si{V}でのscanの様子。横軸はcutのスタート位置でcut幅は20で固定している。\\ $287\sim 307\;\si{ch}$でsignal/bg比が最もよくなっていることが分かる。}
       \label{fig:tdc_scan} 
     \end{center}
@@ -176,7 +178,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
   \section{hit数}
     先ほど決定したTDC cutを用いて、1イベント当たりに光子が入ってきたセグメントの数を数え、それをhit数とした。
     ただし、今回はTDCでhitの有無のみを見ているため、1セグメントに光子が複数個入っても1hitとして数えた。
-    \begin{figure}[h]
+    \begin{figure}[hbtp]
       \begin{center} 
         \includegraphics[scale=0.4, clip]{image/hit_image.pdf}
         \caption{あるイベントで黄色のセグメントに光子が入ってきた場合の図。この場合だと10hitとなる。} 
@@ -184,12 +186,16 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
       \end{center}
     \end{figure}
     
-    全イベントでhit数を出し、そのヒストグラムをガウスフィットすることでピークから各電圧での平均のhit数を決定した。
-    また、TDCのcut範囲をピーク位置($287\sim307\:\si{ch}$)からずらした$400\sim420\:\si{ch}$にしたときのhit数を暗電流によるhit数とした。
+    各イベントでhit数を出し、全イベント分を積み上げたヒストグラムを描いた。
+    そのヒストグラムをガウスフィットすることで、meanから各電圧での平均のhit数を決定した。
+    また、TDCのcutをトリガーのタイミングからズラすことで暗電流によるhit数を見積もった。
+    このとき、cutの幅は$\SI{20}{ch}$で固定した。
+    今回は、TDCのcut範囲を$400\sim420\:\si{ch}$にしたときのhit数を暗電流によるhit数とした。
+    図\ref{fig:nhits}は$V_ov\:\SI{5}{V}$のときの生のhit数と暗電流のhit数である。
     
-    \begin{figure}[b]
+    \begin{figure}[hbtp]
       \begin{center} 
-        \includegraphics[scale=0.5, clip]{image/Vov5_nhits.pdf}
+        \includegraphics[scale=0.4, clip]{image/Vov5_nhits.pdf}
         \caption{Vov$\SI{5}{V}$のnhits} 
         \label{fig:nhits} 
       \end{center}
@@ -197,7 +203,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
 
   \section{hit patternの確認}
     先ほど求めたhit数をセグメントごとに全イベント分足し上げることで、hit patternを確認したところ、図\ref{fig:hitpattern}のようにチェレンコフリングを確認することができた。
-    \begin{figure}[h]
+    \begin{figure}[hbtp]
       \begin{center} 
         \includegraphics[scale=0.5, clip]{image/hitpattern.pdf}
         \caption{Vov$\SI{5}{V}$のhitpattern} 
@@ -206,12 +212,13 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     \end{figure}
 
   \section{リングイメージの中心}
-    hit patternを見るとわかるように、今回の実験ではアレイの中心とリングの中心がズレていることがわかった。
-    そこで、リング中心の決定を最初におこなった。
-    \subsection{決定方法1}
+    図\ref{fig:hitpattern}を見るとわかるように、今回の実験ではアレイの中心とリングの中心がズレていることがわかった。
+    実機で使用する際は、リングイメージチェレンコフ検出器の前方にある飛跡検出器によってリング中心を決定するが、
+    今回のテスト機ではリングイメージチェレンコフ検出器のみなので、セグメントのhitの様子からリング中心を決定する方法を考えた。
+    \subsection{リング中心の決定1}
       アレイを1列ずつ取り出しセグメントごとのhit数を見ると、円周上に来るセグメントのところで2つのピークが見える。
-      また、円の方程式より、図\ref{fig:find_center_image}の$x_1. x_2, y_0$には式\ref{circle_equation}ような関係が成り立つので、
-      ピーク間距離を求め、式\ref{circle_equation}でフィッティングすることで円の中心を求めた。(図\ref{fig:find_center_image})
+      また、円周上の高さが同じ2点$x_1,x_2$とその高さ$y_0$の間には円の方程式より、式\ref{circle_equation}ような関係が成り立つ。
+      よって、ピーク間距離($x_2-x_1$)を求め、式\ref{circle_equation}でフィッティングすることで円の中心を求めた。(図\ref{fig:find_center_image})
       \begin{equation}
         x_2 - x_1 = 2\sqrt{{p_0}^2-{\left(y_0-p_1\right)}^2}
         \label{circle_equation}
@@ -243,12 +250,17 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \end{tabular}
       \end{figure}
       この方法では、リングの中心はアレイのマス目を単位として$\left(3.3, 4.1\right)$と決定された。
-    \subsection{決定方法2}
+    \subsection{リング中心の決定2}
       ここにはリング中心の求め方の二つ目を書く
     \section{リング半径}
-    イベントごとに、リング中心からhitしたセグメントまでの距離をhit数で平均し、それを全イベントで積み上げてヒストグラムを描いた。(図\ref{fig:5Vradius})\\
-    そのヒストグラムをガウスフィットし、meanをその電圧での平均半径とした。
-    \begin{figure}[h]
+    イベントごとに、リング中心からhitしたセグメントまでの距離を平均し、それを全イベントで積み上げてヒストグラムを描いた。
+    1イベントで$n\;\si{hit}$した場合、hitした各セグメントから中心までの距離を$r_1, r_2, \cdots r_n$とすると、そのイベントでの平均半径$r$は
+    \begin{equation}
+      r = \frac{r_1 + r_2 + \cdots + r_n}{n} \nonumber
+    \end{equation}
+    となる。
+    そのヒストグラムをガウスフィットし、meanをその電圧での平均半径とした。(図\ref{fig:5Vradius})
+    \begin{figure}[hbtp]
       \begin{center} 
         \includegraphics[scale=0.5, clip]{image/radius.pdf}
         \caption{イベントごとに計算したリング半径を全イベント分で積み上げたヒストグラム} 
@@ -264,30 +276,32 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \theta_{c} = \arctan \left(\frac{r}{f} \right)
         \label{theta_radius}
       \end{equation}
-      この式より、イベントごとのリング半径からイベントごとのチェレンコフ角$\theta_{c}$を計算した。\\
-      全イベント分を積み上げたヒストグラムをガウスフィットすることでmeanとsigmaを求め、meanをその電圧での平均チェレンコフ角、sigmaをその電圧での角度分解能とした。
+      この式より、イベントごとのリング半径からイベントごとのチェレンコフ角$\theta_{c}$を計算し、それを全イベント分積み上げたヒストグラムを描いた。
+      そのヒストグラムをガウスフィットすることでmeanとsigmaを求め、meanをその電圧での平均チェレンコフ角、sigmaをその電圧での角度分解能とした。
 
       図(Vov5Vの時のチェレンコフ角)\\
 
 \chapter{結果}
   \section{hit数}
-    全電圧でのhit数をまとめると、図\ref{fig:hit_dark}の様にVov5Vでサチュレーションしていることがわかる。
-    そこで、このサチュレーションしているhit数がもっともらしいことを計算により確かめた。
+    全電圧でのhit数をまとめると、図\ref{fig:hit_dark}の様に$V_{ov} \;\SI{5}{V}$でサチュレーションしていることがわかる。
+    そこで、このサチュレーションしているhit数がもっともらしいことを計算により確かめた。\\
     チェレンコフ光の発生光子数$N_{0}$は、次の式で求めることができる。
     \begin{equation}
         N_{0} = 2 \pi \alpha L  \left(1 - \frac{1}{(n\beta)^2}\right) \left(\frac{1}{\lambda_{1}} - \frac{1}{\lambda_{2}}\right)
+        \label{hit_count1}
     \end{equation}
     ここで、$\alpha$は微細構造定数、$n$は輻射体の屈折率、$\beta$は粒子の速度、$L$は輻射体の長さ、$\lambda_{1}$,$\lambda_{2}$はMPPCの感度のある波長である。
-    ただし、実際に検出される光子数$N_{det}$はこの$N_{0}$に鏡の反射効率$\epsilon_{mirror}$やMPPCの量子効率$\epsilon_{MPPC}$を用いて次のようにかける。
+    ただし、実際に検出される光子数$N_{det}$はこの$N_{0}$に鏡の反射効率$\epsilon_{mirror}$やMPPCの量子効率$\epsilon_{MPPC}$を考慮すると次のようになる。
     \begin{equation}
         N_{det} = \int^{\lambda_2}_{\lambda_1} N_{0}\left(\lambda\right) \epsilon_{mirror}\left(\lambda\right) \epsilon_{MPPC}\left(\lambda\right) d\lambda
-        \label{hit_count}
+        \label{hit_count2}
     \end{equation}
-    また、今回は1つのセグメントに同時に複数個の光子が入ってきても1hitと数えるので、その場合いくつかの光子を数え落としてしまう。
-    式(\ref{hit_count})より検出光子数を計算し、シミュレーションによって消えてしまう光子数の見積もりも行った。
+    また、今回は1つのセグメントに同時に複数個の光子が入ってきても1hitと数えるので、いくつかの光子を数え落としてしまう可能性がある。
+    式(\ref{hit_count2})より検出光子数を計算し、シミュレーションによって消えてしまう光子数の見積もりも行った。
+    具体的には、hit patternからリング上に来ているセグメントを決定し、そのセグメントに計算された検出光子数をランダムに振り分け、セグメントが被ってしまう光子数を消える光子数をした。
     その結果、図\ref{fig:hit_simulation}のように、サチュレーションしているところでは解析値と一致していることがわかった。
     このことから、MPPCの使用は$V_{ov} \ge \SI{5}{V}$が良さそうであることが分かった。
-    \begin{figure}[h]
+    \begin{figure}[hbtp]
       \begin{tabular}{cc}
         %---- 最初の図 ---------------------------
         \begin{minipage}[t]{0.45\hsize}
@@ -311,7 +325,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
 
   \section{リング半径・チェレンコフ角}
     各電圧でのチェレンコフ角とリング半径は図$\ref{fig:all_theta}, \ref{fig:all_radius}$のようになった。
-    \begin{figure}[h]
+    \begin{figure}[hbtp]
       \begin{tabular}{cc}
         %---- 最初の図 ---------------------------
         \begin{minipage}[t]{0.45\hsize}
@@ -332,7 +346,35 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     \end{figure}
 
 
-    \begin{table}[b]
+    \subsection{リング半径・チェレンコフ角の絶対値のズレ}
+    まず、得られたチェレンコフ角・リング半径の絶対値について考える。
+    ただし、チェレンコフ角とリング半径は式(\ref{theta_radius})より1対1対応なので、ここではリング半径について考える。
+    MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=330 mm$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかける。
+    今回は$\SI{0.95}{GeV/c}$の電子(陽電子)を用いたので、速度$\beta$は、相対論の式より
+    \begin{eqnarray}
+      p &=& \frac{mv}{\sqrt{1-{\beta}^2}} \nonumber \\
+      pc &=& \frac{mc^2\cdot \beta}{\sqrt{1-{\beta}^2}} \nonumber 
+    \end{eqnarray}
+    よって、
+    \begin{eqnarray}
+      \beta &=& \sqrt{\frac{{pc}^2}{\left(mc^2\right)^2 + {pc}^2}} \nonumber \\
+      &=& \sqrt{\frac{\left(0.95\times 10^9\right)^2}{\left(0.51\times 10^6\right)^2 + \left(0.95\times 10^9\right)^2}} = 0.999 \nonumber
+    \end{eqnarray}
+    この時、チェレンコフ角$\theta$は空気の屈折率$n=1.000273$とすると、式(\ref{cherenkov})より
+    $r=\SI{7.7}{mm}$となった。この値は解析で得られた値より10\%ほど大きいが、
+    今回の実験ではMPPCの配置が球面鏡の焦点面から$\SI{42}{mm}$ほどズレていたので、それが原因ではないかと考えた。
+    このズレによる影響を、簡単のために平面鏡の場合で考えた。
+    図\ref{fig:optical_system}のように、MPPCが焦点面からズレていた場合焦点面で収束されるはずの光が内側と外側に広がってしまい、
+    上流側の光が多いほど内側にくる光が多くなる。今回のセットアップによるズレを考慮して計算を行うと表$\ref{tab:radius}$のようになった。
+    この平均値が解析で得られる値と考えると、先ほどとは逆に解析値の方が5\%ほど大きくなっている。
+    \begin{figure}[hbtp]
+      \begin{center} 
+        \includegraphics[scale=1, clip]{image/optical_system.png}
+        \caption{光学系} 
+        \label{fig:optical_system} 
+      \end{center}
+    \end{figure}
+    \begin{table}[hbtp]
       \begin{center}
         \label{tab:radius}
         \caption{リング半径の広がり (mm)}
@@ -342,34 +384,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \end{tabular}
       \end{center}
     \end{table}
-    \subsection{リング半径・チェレンコフ角の絶対値のズレ}
-      まず、得られたチェレンコフ角・リング半径の絶対値について考える。
-      ただし、チェレンコフ角とリング半径は式\ref{theta_radius}より1対1対応なので、ここではリング半径について考える。
-      MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=330 mm$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかける。
-      今回は$\SI{0.95}{GeV/c}$の電子(陽電子)を用いたので、速度$\beta$は、相対論の式より
-      \begin{eqnarray}
-        p &=& \frac{mv}{\sqrt{1-{\beta}^2}} \nonumber \\
-        pc &=& \frac{mc^2\cdot \beta}{\sqrt{1-{\beta}^2}} \nonumber 
-      \end{eqnarray}
-      よって、
-      \begin{eqnarray}
-        \beta &=& \sqrt{\frac{{pc}^2}{\left(mc^2\right)^2 + {pc}^2}} \nonumber \\
-        &=& \sqrt{\frac{\left(0.95\times 10^9\right)^2}{\left(0.51\times 10^6\right)^2 + \left(0.95\times 10^9\right)^2}} = 0.999 \nonumber
-      \end{eqnarray}
-      この時、チェレンコフ角$\theta$は空気の屈折率$n=1.000273$とすると、式(\ref{cherenkov})より
-      $r=\SI{7.7}{mm}$となった。この値は解析で得られた値より10\%ほど大きい。今回の実験ではMPPCの配置が球面鏡の焦点面から$\SI{42}{mm}$ほどズレていたので、それが原因ではないかと考えた。
-      このズレによる影響を、簡単のために平面鏡の場合で考えた。
-      図\ref{fig:optical_system}のように、MPPCが焦点面からズレていた場合焦点面で収束されるはずの光が内側と外側に広がってしまい、
-      上流側の光が多いほど内側にくる光が多くなる。今回のセットアップによるズレを考慮して計算を行うと表$\ref{tab:radius}$のようになった。
-      この平均値が解析で得られる値と考えると、先ほどとは逆に解析値の方が5\%ほど大きくなっている。
-      \begin{figure}[h]
-        \begin{center} 
-          \includegraphics[scale=1, clip]{image/optical_system.png}
-          \caption{光学系} 
-          \label{fig:optical_system} 
-        \end{center}
-      \end{figure}
-      \begin{figure}[h]
+    \begin{figure}[hbtp]
         \begin{center} 
           \includegraphics[scale=0.4, clip]{image/dark_current_image.pdf}
           \caption{黄：実際に光子が当たったセグメント、青：暗電流によるhitがあったセグメント} 
@@ -381,7 +396,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
       リングの内側に暗電流が発生した場合はリング半径は小さくなるが、今回のリングとMPPCアレイのサイズ関係だと内側よりも外側の方が面積が大きいため、暗電流によってリング半径が大きく見積もられてしまう。
       図\ref{fig:darkcurrent_radius}は実際に暗電流のイベントのみの場合にリング半径を計算したものである。
       理論値よりも大きい値が得られることが分かる。
-      \begin{figure}[h]
+      \begin{figure}[hbtp]
         \begin{center} 
           \includegraphics[scale=0.4, clip]{image/background_radius.pdf}
           \caption{暗電流のみでの各電圧のリング半径}
@@ -389,12 +404,17 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
         \end{center}
       \end{figure}
     \subsection{リング半径・チェレンコフ角の電圧依存性}
-    リング半径とチェレンコフ角の電圧依存性を考えるために、簡単なシミュレーションをおこなった。
+    続いて、リング半径・チェレンコフ角の電圧依存生について考える。
+    本来はMPPCの電圧を上げても、チェレンコフリングの半径やチェレンコフ角は一定のはずである。
+    しかし、今回の実験ではMPPCの電圧を上げていくとリング半径・チェレンコフ角も増加していることが分かった。
+    この電圧依存性の原因を考えるために、簡単なシミュレーションをおこなった。\\
+    以下はそのシミュレーションの条件である。\\
     リング中心は(3.3, 3.9)、リング半径は$4.54\sim\SI{8.69}{mm}$の範囲でランダムに決定。
-    1イベントごとの発生光子数は68個、MPPCの検出確率は各電圧での値を用いた。
-    また、1セグメントに複数の光子が同時に入る効果やセグメント間の隙間も考慮した。
+    1イベントごとの発生光子数は式(\ref{hit_count1})の計算より68個、MPPCの検出確率は浜松ホトニクスのホームページに記載の各電圧での値を用い、
+    鏡の反射効率は全波長で$0.9$とした。
+    また、1セグメントに複数の光子が同時に入る効果やセグメント間の隙間も考慮した。\\
     以上の条件で、実際の解析と同様の手順でリング半径を求めた。
-    \begin{figure}[h]
+    \begin{figure}[hbtp]
       \begin{center} 
         \includegraphics[scale=0.4, clip]{image/radius_simulation.pdf}
         \caption{シミュレーションによるリング半径} 
@@ -407,22 +427,24 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     リング半径・チェレンコフ角に電圧依存性が生じてしまう。
   \section{角度分解能}
     各電圧での角度分解能をまとめると図$\ref{fig:resolution_all}$のようになった。
-    \begin{figure}[h]
+    分解能もVov $\SI{5}{V}$あたりでサチュレーションしていることがわかる。
+    \begin{figure}[htbp]
       \begin{center} 
         \includegraphics[scale=0.4, clip]{image/resolutin_allV.pdf}
         \caption{各電圧での角度分解能} 
         \label{fig:resolution_all} 
       \end{center}
     \end{figure}
-    分解能もVov $\SI{5}{V}$あたりでサチュレーションしていることがわかる。
+
     \subsection{1 p.e.あたりの分解能}
     1 p.e.あたりの分解能を求めるために、イベントごとのhit数で場合分けをし分解能を求めた。
-    図\ref{fig:per_hit}のグラフを1 p.e.あたりの分解能を$\Delta \theta_{1 p.e.}$として、$\frac{\Delta \theta_{1 p.e.}}{\sqrt{nhits}}$でフィットした。
-    フィッティングの値より、$\Delta \theta_{1 p.e.} = 4.85 \pm 0.01 \: \si{mrad}$と求められた。
-    \begin{figure}[h]
+    さらに、1 p.e.あたりの分解能を$\Delta \theta_{1 p.e.}$として、$\frac{\Delta \theta_{1 p.e.}}{\sqrt{nhits}}$でフィッティングを行うと、
+    図\ref{fig:per_hit}のようになった。
+    図\ref{fig:per_hit}のパラメータの値より、$\Delta \theta_{1 p.e.} = 4.85 \pm 0.01 \: \si{mrad}$と求められた。
+    \begin{figure}[htbp]
       \begin{center} 
-        \includegraphics[scale=0.4, clip]{image/per_hit.pdf}
-        \caption{hit数ごとの分解能} 
+        \includegraphics[scale=0.3, clip]{image/per_hit.pdf}
+        \caption{hit数ごとの分解能。横軸はイベントごとのhit数、縦軸は角度分解能。} 
         \label{fig:per_hit} 
       \end{center}
     \end{figure}
@@ -440,7 +462,7 @@ MPPCは$8\times8$の2次元アレイ、64セグメントのもの使用し、１
     また、角度分解能と1 p.e.あたりの分解能の関係式$\frac{\Delta \theta_{1 p.e.}}{\sqrt{nhits}}=\Delta \theta$より、cut幅20の場合から
     \begin{eqnarray}
       \frac{4.85 \si{mrad}}{\sqrt{nhits}}&=&1.45 \si{mrad} \nonumber \\
-      \sqrt{nhits} &=& 3.34 \nonumber \\
+      \sqrt{nhits} &=& 3.34 \nonumber 
     \end{eqnarray}
     が求まる。
     よって、cut幅0での1 p.e.あたりの分解能$\Delta \theta_{1 p.e.}$は$\frac{\Delta \theta_{1 p.e.}}{\sqrt{nhits}}=1.38 \si{mrad}$より
