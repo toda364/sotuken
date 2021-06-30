@@ -289,15 +289,22 @@ $V_{ov}=\SI{5}{V}$で各イベントごとにhit数を出し、全イベント�
     
     
     \section{チェレンコフ角と角度分解能}
-      チェレンコフ光の式より、チェレンコフ角$\theta_{c}$は、鏡の焦点距離$f$とリング半径$r$を用いて次のように表せる。
-      \begin{equation}
-        \theta_{c} = \arctan \left(\frac{r}{f} \right)
-        \label{theta_radius}
-      \end{equation}
-      式(\ref{theta_radius})より、イベントごとのリング半径からイベントごとのチェレンコフ角$\theta_{c}$を計算し、全イベントに対するチェレンコフ角$\theta_c$の分布を描いたのが図(\ref{})のヒストグラムである。
-      そのヒストグラム中のピークをガウスフィットすることでmeanとsigmaを求め、meanをその電圧での平均チェレンコフ角、sigmaをその電圧での角度分解能とした。
-
-      図(Vov5Vの時のチェレンコフ角)\\
+    チェレンコフ光の式より、チェレンコフ角$\theta_{c}$は、鏡の焦点距離$f$とリング半径$r$を用いて次のように表せる。
+    \begin{equation}
+      \theta_{c} = \arctan \left(\frac{r}{f} \right)
+      \label{theta_radius}
+    \end{equation}
+    式(\ref{theta_radius})より、イベントごとのリング半径からイベントごとのチェレンコフ角$\theta_{c}$を計算し、全イベントに対するチェレンコフ角$\theta_c$の分布を描いたのが図(\ref{fig:5Vangle})のヒストグラムである。
+    そのヒストグラム中のピークをガウスフィットすることでmeanとsigmaを求め、meanをその電圧での平均チェレンコフ角、sigmaをその電圧での角度分解能とした。
+    \begin{figure}[hbtp]
+      \begin{center} 
+        \includegraphics[scale=0.5, clip]{image/Vov5V_angle.png}
+        \caption{$V_{ov}=\SI{5}{V}$のときのチェレンコフ角。} 
+        \label{fig:5Vangle} 
+      \end{center}
+    \end{figure}
+    
+      
 
 \chapter{結果}
   \section{hit数}
@@ -342,7 +349,7 @@ $V_{ov}=\SI{5}{V}$で各イベントごとにhit数を出し、全イベント�
     
     % \end{figure}
 
-  \section{リング半径・チェレンコフ角}
+  \section{リング半径とチェレンコフ角}
     各電圧でのチェレンコフ角とリング半径は図$\ref{fig:all_theta}$と$\ref{fig:all_radius}$のようになった。
     \begin{figure}[hbtp]
       \begin{tabular}{cc}
@@ -365,7 +372,7 @@ $V_{ov}=\SI{5}{V}$で各イベントごとにhit数を出し、全イベント�
     \end{figure}
 
 
-    \subsection{リング半径・チェレンコフ角の絶対値のズレ}
+    \subsection{リング半径とチェレンコフ角の絶対値のズレ}
     まず、得られたチェレンコフ角・リング半径の絶対値について考える。
     ただし、チェレンコフ角とリング半径は式(\ref{theta_radius})より1対1対応なので、ここではリング半径について考える。
     MPPCが球面鏡の焦点面に配置されていた場合、MPPC上でのリング半径$r$は球面鏡の焦点距離$f=\SI{330}{mm}$、チェレンコフ角$\theta_{c}$から$r=f\tan{\theta_{c}}$とかける。
@@ -418,7 +425,7 @@ $V_{ov}=\SI{5}{V}$で各イベントごとにhit数を出し、全イベント�
       理論値よりも大きい値が得られることが分かる。
       \begin{figure}[hbtp]
         \begin{center} 
-          \includegraphics[scale=0.4, clip]{image/background_radius.pdf}
+          \includegraphics[scale=0.4, clip]{image/background_radius.png}
           \caption{暗電流のみでの各電圧のリング半径。}
           \label{fig:darkcurrent_radius} 
         \end{center}
